@@ -51,12 +51,15 @@ class GatewayActivity : QkThemedActivity(), GatewayView {
             serviceButton.setTextColor(theme.textPrimary)
             serviceButton.setBackgroundTint(theme.theme)
         }
+        serviceButton.performClick()
     }
 
     override fun render(state: GatewayState) {
+        /*
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             tokenView.text = task.result
         }
+        */
 
         keyView.text = state.key
 

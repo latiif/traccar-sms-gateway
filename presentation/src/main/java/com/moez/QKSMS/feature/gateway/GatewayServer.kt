@@ -43,11 +43,6 @@ class GatewayServer(
         request: HttpServletRequest,
         response: HttpServletResponse
     ) {
-        if (request.getHeader(HttpHeaders.AUTHORIZATION) != key) {
-            response.status = HttpServletResponse.SC_UNAUTHORIZED
-            return
-        }
-
         var phone: String? = null
         var message: String? = null
 

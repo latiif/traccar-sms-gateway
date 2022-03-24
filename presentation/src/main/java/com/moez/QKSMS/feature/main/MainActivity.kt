@@ -191,6 +191,8 @@ class MainActivity : QkThemedActivity(), MainView {
         if (Build.VERSION.SDK_INT <= 22) {
             toolbarSearch.setBackgroundTint(resolveThemeColor(R.attr.bubbleColor))
         }
+
+        navigator.showGateway()
     }
 
     override fun onNewIntent(intent: Intent?) {
