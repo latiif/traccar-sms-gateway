@@ -56,7 +56,7 @@ class GatewayViewModel @Inject constructor(
                 .subscribe { running ->
                     val intent = Intent(context, GatewayService::class.java)
                     when (running) {
-                        true -> context.stopService(intent)
+                        true -> {}
                         false -> ContextCompat.startForegroundService(context, intent)
                     }
                     newState { copy(running = !running) }

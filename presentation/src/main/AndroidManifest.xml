@@ -49,10 +49,6 @@
         <activity
             android:name=".feature.main.MainActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -115,7 +111,12 @@
             android:theme="@style/AppThemeDialog"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".feature.scheduled.ScheduledActivity" />
-        <activity android:name=".feature.gateway.GatewayActivity" />
+        <activity android:name=".feature.gateway.GatewayActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".feature.backup.BackupActivity" />
         <activity android:name=".feature.contacts.ContactsActivity" />
 

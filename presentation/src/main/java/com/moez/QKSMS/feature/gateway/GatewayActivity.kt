@@ -7,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.messaging.FirebaseMessaging
+import com.jakewharton.rxbinding2.view.clickable
 import com.jakewharton.rxbinding2.view.clicks
 import com.moez.QKSMS.R
 import com.moez.QKSMS.common.base.QkThemedActivity
@@ -63,14 +64,15 @@ class GatewayActivity : QkThemedActivity(), GatewayView {
 
         keyView.text = state.key
 
+        serviceButton.isClickable = false
         serviceButton.setText(
             when (state.running) {
                 true  -> R.string.gateway_stop
                 false -> R.string.gateway_start
             }
         )
-        disabledView.isVisible = !state.running
-        enabledView.isVisible = state.running
+        disabledView.isVisible = false
+        enabledView.isVisible = true
 
         urlsView.text = state.urls.joinToString("\n\n")
     }
